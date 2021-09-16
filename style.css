@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+  background: radial-gradient(
+    circle at 50%,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  color: white;
+}
+.container {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+header {
+  border: 2px solid white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 50px 0;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-transform: uppercase;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h3 {
+  color: hsl(214, 47%, 23%);
+  text-transform: uppercase;
+}
+.score-container {
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 40px;
+}
+.score-container p {
+  color: hsl(237, 49%, 15%);
+  font-weight: 700;
+  margin: 0;
+  font-size: 4rem;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  height: 350px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+main::before {
+  background-image: url('./images/bg-triangle.svg');
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  height: 70%;
+  width: 70%;
+  z-index: -1;
+}
+
+.btn {
+  cursor: pointer;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  border: none;
+  box-shadow: inset 0 -6px rgba(0, 0, 0, 0.15);
+  margin: 0 25px;
+}
+
+.button {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.btn-scissors {
+  background: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+.btn-paper {
+  background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+.btn-rock {
+  background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.btn .wrapper {
+  background-color: white;
+  box-shadow: inset 0 6px rgba(0, 0, 0, 0.15);
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+.btn-rules {
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  padding: 10px 25px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: inherit;
+  position: fixed;
+  bottom: 30px;
+  right: 100px;
+}
+
+.btn-reset {
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: white;
+  color: hsl(237, 49%, 15%);
+  padding: 10px 25px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+
+.selection {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.selection .btn {
+  margin: 50px 100px;
+  transform: scale(1.4);
+}
+
+.big-text {
+  font-size: 3rem;
+  margin: 0 0 20px;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.rulesmodal {
+  display: none;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}
+
+.rulesmodal button {
+  margin-top: 80px;
+  transform: scale(1.5);
+  border: none;
+  cursor: pointer;
+  background-color: none;
+}
+
+@media (max-width: 900px) {
+  .play-container {
+    order: 1;
+  }
+  .selection .btn {
+    margin: 50px 20px;
+    transform: scale(1);
+  }
+  .selection {
+    max-width: 600px;
+  }
+  .btn-rules {
+    position: unset;
+    margin-left: 45%;
+  }
+}
